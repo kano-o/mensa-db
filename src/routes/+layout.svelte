@@ -1,52 +1,63 @@
 <script lang='ts'>
-	// The ordering of these imports is critical to your app working properly
-	import '@skeletonlabs/skeleton/themes/theme-hamlindigo.css';
-	// If you have source.organizeImports set to true in VSCode, then it will auto change this ordering
-	import '@skeletonlabs/skeleton/styles/skeleton.css';
-	// Most of your app wide CSS should be put in this file
-	import '../app.postcss';
-	import { AppShell, AppBar } from '@skeletonlabs/skeleton';
+    // The ordering of these imports is critical to your app working properly
+    import '@skeletonlabs/skeleton/themes/theme-skeleton.css';
+    // If you have source.organizeImports set to true in VSCode, then it will auto change this ordering
+    import '@skeletonlabs/skeleton/styles/skeleton.css';
+    // Most of your app wide CSS should be put in this file
+    import '../app.postcss';
+    import {AppShell, AppBar} from '@skeletonlabs/skeleton';
+    import {IconBrandGithubFilled, IconSoup, IconDatabaseExclamation} from '@tabler/icons-svelte'
+    import {LightSwitch} from '@skeletonlabs/skeleton';
 </script>
 
 <!-- App Shell -->
 <AppShell>
-	<svelte:fragment slot="header">
+    <svelte:fragment slot="header">
+        <AppBar gridColumns="grid-cols-3" slotDefault="place-self-center" slotTrail="place-content-end">
+            <svelte:fragment slot="lead">
+                <IconDatabaseExclamation size="30" stroke="2"/>
+            </svelte:fragment>
 
-		<!-- App Bar -->
-		<AppBar>
-			<svelte:fragment slot="lead">
-				<strong class="text-xl uppercase">Skeleton</strong>
-			</svelte:fragment>
-			<svelte:fragment slot="trail">
-				<a
-					class="btn btn-sm variant-ghost-surface"
-					href="https://discord.gg/EXqV7W8MtY"
-					target="_blank"
-					rel="noreferrer"
-				>
-					Discord
-				</a>
-				<a
-					class="btn btn-sm variant-ghost-surface"
-					href="https://twitter.com/SkeletonUI"
-					target="_blank"
-					rel="noreferrer"
-				>
-					Twitter
-				</a>
-				<a
-					class="btn btn-sm variant-ghost-surface"
-					href="https://github.com/skeletonlabs/skeleton"
-					target="_blank"
-					rel="noreferrer"
-				>
-					GitHub
-				</a>
-			</svelte:fragment>
-		</AppBar>
-	</svelte:fragment>
-	<!-- Page Route Content -->
-	<slot />
+            <strong class="text-xl">Mensa-DB</strong>
 
+            <svelte:fragment slot="trail">
+                <LightSwitch/>
+            </svelte:fragment>
+        </AppBar>
+    </svelte:fragment>
+
+    <svelte:fragment slot="sidebarLeft">
+        Sidebar Left
+    </svelte:fragment>
+
+    <svelte:fragment slot="footer">
+        <a
+            class="btn variant-ghost-surface"
+            href="https://github.com/kano-o/mensa-db"
+            target="_blank"
+            rel="noreferrer"
+        >
+		    <span>
+		        <IconBrandGithubFilled size={20} stroke={1}/>
+		    </span>
+            <span>
+		        Github
+            </span>
+        </a>
+
+        <a
+            class="btn variant-ghost-surface"
+            href="https://stw-on.de/braunschweig/essen/mensen-cafeterien/"
+            target="_blank"
+            rel="noreferrer"
+        >
+		    <span>
+		        <IconSoup size={20} stroke={1}/>
+		    </span>
+            <span>
+		    Mensa
+		    </span>
+        </a>
+    </svelte:fragment>
 </AppShell>
 
