@@ -26,6 +26,8 @@
         </AppBar>
     </svelte:fragment>
 
+    <slot />
+
     <svelte:fragment slot="footer">
         <a
             class="btn variant-ghost-surface"
