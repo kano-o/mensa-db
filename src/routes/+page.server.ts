@@ -15,9 +15,7 @@ for (const mensaID of mensaIDs) {
     let responseMeals = [];
 
     const response = await fetch(endpoint);
-    const data = await response.json();
-    //console.log(data);
-    responseMeals = data;
+    responseMeals = await response.json();
 
     const mealsArr = responseMeals.meals;
 
@@ -26,9 +24,6 @@ for (const mensaID of mensaIDs) {
     }
 }
 
-
-
-//console.log(htmlString);
 export function load() {
     return {
         htmlString

@@ -26,15 +26,15 @@
         </AppBar>
     </svelte:fragment>
 
-    <slot />
+    <slot/>
 
     <svelte:fragment slot="footer">
         <a
-            class="btn variant-ghost-surface"
-            href="https://github.com/kano-o/mensa-db"
-            target="_blank"
-            rel="noreferrer"
-            style="float:right"
+                class="btn variant-ghost-surface"
+                href="https://github.com/kano-o/mensa-db"
+                target="_blank"
+                rel="noreferrer"
+                style="float:right"
         >
 		    <span>
 		        <IconBrandGithubFilled size={20} stroke={1}/>
@@ -45,11 +45,11 @@
         </a>
 
         <a
-            class="btn variant-ghost-surface"
-            href="https://stw-on.de/braunschweig/essen/mensen-cafeterien/"
-            target="_blank"
-            rel="noreferrer"
-            style="float:right"
+                class="btn variant-ghost-surface"
+                href="https://stw-on.de/braunschweig/essen/mensen-cafeterien/"
+                target="_blank"
+                rel="noreferrer"
+                style="float:right"
         >
 		    <span>
 		        <IconSoup size={20} stroke={1}/>

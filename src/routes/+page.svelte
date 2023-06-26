@@ -2,7 +2,7 @@
 
 
 <script>
-    import { TabGroup, Tab } from '@skeletonlabs/skeleton';
+    import {TabGroup, Tab} from '@skeletonlabs/skeleton';
 
     let tabSet = 0;
 
