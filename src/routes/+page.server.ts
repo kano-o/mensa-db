@@ -26,10 +26,6 @@ for (const mensaID of mensaIDs) {
     }
 }
 
-const endpointMensa1 = 'https://sls.api.stw-on.de/v1/locations/101/menu/' + dateString;
-const endpoint360Grad = 'https://sls.api.stw-on.de/v1/locations/103/menu/' + dateString;
-const endpointMensa2 = 'https://sls.api.stw-on.de/v1/locations/105/menu/' + dateString;
-
 
 
 //console.log(htmlString);
