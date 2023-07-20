@@ -21,7 +21,9 @@
     function generateTableSource(stringIndex) {
         const sourceData = [];
         for (let i = 0; i < dataString[stringIndex].length; i += 2) {
-            sourceData.push({name: dataString[stringIndex][i], symbol: 'test', preis: dataString[stringIndex][i + 1]})
+            sourceData.push({name: dataString[stringIndex][i],
+                             symbol: 'test',
+                             preis: dataString[stringIndex][i + 1]})
         }
         return sourceData;
     }
@@ -52,8 +54,6 @@
             <svelte:fragment slot="panel">
                 <span style="white-space: pre-line">
                 {#if tabSet === 0}
-
-
 
                     <div>
                         <Table source={tableSimple0} interactive={true}  />
