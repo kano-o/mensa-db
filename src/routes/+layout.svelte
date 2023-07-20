@@ -6,7 +6,7 @@
     // Most of your app wide CSS should be put in this file
     import '../app.postcss';
     import {AppShell, AppBar} from '@skeletonlabs/skeleton';
-    import {IconBrandGithubFilled, IconSoup, IconDatabaseExclamation} from '@tabler/icons-svelte'
+    import {IconBrandGithubFilled, IconSoup, IconDatabaseExclamation, IconTerminal2} from '@tabler/icons-svelte'
     import {LightSwitch} from '@skeletonlabs/skeleton';
 </script>
 
@@ -37,7 +37,7 @@
                 style="float:right"
         >
 		    <span>
-		        <IconBrandGithubFilled size={20} stroke={1}/>
+		        <IconBrandGithubFilled size={20} stroke={1.3}/>
 		    </span>
             <span>
 		        Github
@@ -52,12 +52,28 @@
                 style="float:right"
         >
 		    <span>
-		        <IconSoup size={20} stroke={1}/>
+		        <IconSoup size={20} stroke={1.3}/>
 		    </span>
             <span>
 		    Mensa
 		    </span>
         </a>
+
+        <a
+                class="btn variant-ghost-surface"
+                href="https://crates.io/crates/menser"
+                target="_blank"
+                rel="noreferrer"
+                style="float:right"
+        >
+		    <span>
+		        <IconTerminal2 size={20} stroke={1.3}/>
+		    </span>
+            <span>
+		        CLI Mensa Menu
+            </span>
+        </a>
+
     </svelte:fragment>
 </AppShell>
 
