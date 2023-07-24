@@ -5,7 +5,5 @@
 </script>
 
 {#if $modalStore[0]}
-    <a>
-
-    </a>
+    <div></div>
 {/if}

@@ -2,13 +2,13 @@
 
 
 <script lang="ts">
-    import {TabGroup, Tab, tableMapperValues, ModalComponent} from '@skeletonlabs/skeleton';
+    import {TabGroup, Tab, tableMapperValues} from '@skeletonlabs/skeleton';
 	import { Table } from '@skeletonlabs/skeleton';
 	import type { TableSource } from '@skeletonlabs/skeleton';
     import { Ratings } from '@skeletonlabs/skeleton';
     import {IconStar, IconStarHalfFilled, IconStarFilled} from '@tabler/icons-svelte';
     import { Modal, modalStore } from '@skeletonlabs/skeleton';
-    import type { ModalSettings } from '@skeletonlabs/skeleton';
+    import type { ModalSettings, ModalComponent } from '@skeletonlabs/skeleton';
     import RatingModal from "../modals/RatingModal.svelte";
 
     let tabSet = 0;
@@ -33,7 +33,7 @@
         modalStore.trigger(modal);
     }
 
-    function generateTableSource(stringIndex) {
+    function generateTableSource(stringIndex:number) {
         const sourceData = [];
         for (let i = 0; i < dataString[stringIndex].length; i += 2) {
             sourceData.push({name: dataString[stringIndex][i],
