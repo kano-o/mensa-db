@@ -1,7 +1,7 @@
 <script lang="ts">
     import { modalStore } from "@skeletonlabs/skeleton";
-    export let balls: string;
-    balls = "balls";
+
+    const test = modalStore;
 </script>
 
 {#if $modalStore[0]}

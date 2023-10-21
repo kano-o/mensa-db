@@ -3,8 +3,8 @@
 
 <script lang="ts">
     import {TabGroup, Tab, tableMapperValues} from '@skeletonlabs/skeleton';
-	import { Table } from '@skeletonlabs/skeleton';
-	import type { TableSource } from '@skeletonlabs/skeleton';
+	  import { Table } from '@skeletonlabs/skeleton';
+	  import type { TableSource } from '@skeletonlabs/skeleton';
     import { Ratings } from '@skeletonlabs/skeleton';
     import {IconStar, IconStarHalfFilled, IconStarFilled} from '@tabler/icons-svelte';
     import { Modal, modalStore } from '@skeletonlabs/skeleton';
@@ -21,14 +21,17 @@
         value.current = event.detail.index;
     }
 
-    const ratingModalComponent: ModalComponent = {
-        ref: RatingModal,
-    }
-
     function rateModal(): void {
         const modal: ModalSettings = {
-            type: 'component',
-            component: 'ratingModalComponent',
+            type: 'prompt',
+            // Data
+            title: 'Enter review',
+            body: 'Provide a star rating from 1 - 7 below.',
+            // Populates the input value and attributes
+            value: 'Skeleton',
+            valueAttr: { type: 'text', minlength: 3, maxlength: 10, required: true },
+            // Returns the updated response value
+            response: (r: string) => console.log('response:', r),
         };
         modalStore.trigger(modal);
     }
@@ -73,10 +76,8 @@
                 {#if tabSet === 0}
 
                     <div>
-                        <Table source={tableSimple0} interactive={true} on:select={rateModal}/>
+                        <Table source={tableSimple0} interactive={true} on:selected={rateModal}/>
                         <!--<on:selected={ }-->
-
-                        <button class="btn variant-filled" on:click={rateModal}>Rate</button>
 
                         <Ratings bind:value={value.current} max={value.max} on:icon={iconClick}>
 	                        <svelte:fragment slot="empty"><IconStar size={20} stroke={1}/></svelte:fragment>
